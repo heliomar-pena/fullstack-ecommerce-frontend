@@ -1,0 +1,17 @@
+.login {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__container {
+  width: 100%;
+  padding: 2rem;
+}
+
+.login__title {
+    font-size: 2rem;
+}
+
