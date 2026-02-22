@@ -2,7 +2,7 @@ import { Controller, type Control } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import type { CategoryAttributeApi } from "../dto/product.dto";
+import type { CategoryAttributeApi } from "../../dto/product.dto";
 
 type Props = {
   attribute: CategoryAttributeApi;

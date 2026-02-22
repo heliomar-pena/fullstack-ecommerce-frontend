@@ -13,11 +13,11 @@ import { Button } from "@/components/ui/button";
 import type {
   CategoryAttributeApi,
   ProductAttributeValueApi,
-} from "../dto/product.dto";
-import { buildProductDetailsSchema } from "../const/product-details.schema";
+} from "../../dto/product.dto";
+import { buildProductDetailsSchema } from "../../const/product-details.schema";
 import { AttributeField } from "./attribute-field";
 import type z from "zod";
-import { buildProductDetailsDefaultValues } from "../const/product-details.defaults";
+import { buildProductDetailsDefaultValues } from "../../const/product-details.defaults";
 
 type Props = {
   open: boolean;

@@ -12,7 +12,14 @@ import { useMyProducts } from "./hooks/use-my-products";
 import { useProductMutations } from "./hooks/use-product-mutation";
 import type { ProductDto } from "./dto/product.dto";
 import { useState } from "react";
-import { ProductDetailsDialog } from "./components/add-product-details";
+import { ProductDetailsDialog } from "./components/add-product-details-dialog/add-product-details";
+import { useCreateCategory } from "./hooks/use-create-category";
+import {
+  AddCategoryDialog,
+  type AddCategoryPayload,
+} from "./components/add-category-dialog/add-category-dialog";
+import { useCreateProduct } from "./hooks/use-create-product";
+import { CreateProductDialog } from "./components/create-product-dialog/create-product-dialog";
 
 export default function MerchantPage() {
   const { data, isLoading, error } = useMyProducts();
@@ -20,6 +27,13 @@ export default function MerchantPage() {
 
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [selected, setSelected] = useState<ProductDto | null>(null);
+
+  const [createProductOpen, setCreateProductOpen] = useState(false);
+  const createProductMutation = useCreateProduct();
+
+  const [categoryOpen, setCategoryOpen] = useState(false);
+
+  const createCategory = useCreateCategory();
 
   const openDetails = (product: ProductDto) => {
     setSelected(product);
@@ -35,18 +49,15 @@ export default function MerchantPage() {
     <div className="p-6">
       <div className="mb-4 flex items-center justify-between gap-3">
         <div>
-          <h1 className="text-xl font-semibold">Productos</h1>
+          <h1 className="text-xl font-semibold">Merchant</h1>
           <p className="text-sm text-muted-foreground">Product List.</p>
         </div>
 
         <div className="flex items-center gap-2">
-          <Button onClick={() => console.log("open add product dialog")}>
+          <Button onClick={() => setCreateProductOpen(true)}>
             Add Product
           </Button>
-          <Button
-            variant="outline"
-            onClick={() => console.log("open add category dialog")}
-          >
+          <Button variant="outline" onClick={() => setCategoryOpen(true)}>
             Add Category
           </Button>
         </div>
@@ -154,6 +165,25 @@ export default function MerchantPage() {
           }}
         />
       )}
+
+      <AddCategoryDialog
+        open={categoryOpen}
+        onOpenChange={setCategoryOpen}
+        saving={createCategory.isPending}
+        onSave={async (payload: AddCategoryPayload) => {
+          await createCategory.mutateAsync(payload);
+          setCategoryOpen(false);
+        }}
+      />
+      <CreateProductDialog
+        open={createProductOpen}
+        onOpenChange={setCreateProductOpen}
+        saving={createProductMutation.isPending}
+        onSave={async (payload) => {
+          await createProductMutation.mutateAsync(payload);
+          setCreateProductOpen(false);
+        }}
+      />
     </div>
   );
 }
