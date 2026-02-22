@@ -11,5 +11,5 @@ export const AnonymousRoutes = () => {
     if (token) navigate("/");
   }, [navigate]);
 
-  return <Outlet />
+  return <Outlet />;
 };

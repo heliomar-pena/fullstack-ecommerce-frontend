@@ -12,8 +12,7 @@ export type NavItem = {
 export type NavGroup = {
   key: string;
   title: string;
-  // roles requeridos para ver el grupo
-  allowedRoles?: readonly Role[]; // si omitís => visible para todos los autenticados (si querés)
+  allowedRoles?: readonly Role[];
   items: NavItem[];
 };
 

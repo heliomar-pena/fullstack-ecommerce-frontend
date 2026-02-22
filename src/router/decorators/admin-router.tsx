@@ -14,5 +14,5 @@ export const AdminRouter = () => {
     }
   }, [isLoading, navigate, user]);
 
-  return <Outlet />
+  return <Outlet />;
 };

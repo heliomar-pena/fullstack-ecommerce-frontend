@@ -18,5 +18,5 @@ export const MerchantRouter = () => {
     }
   }, [isLoading, navigate, user]);
 
-  return <Outlet />
+  return <Outlet />;
 };

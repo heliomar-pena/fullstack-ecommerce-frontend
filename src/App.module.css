@@ -1,8 +1,8 @@
 .App {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 .App :global(a) {
-    text-decoration: underline;
-    color: var(--accent-foreground)
+  text-decoration: underline;
+  color: var(--accent-foreground);
 }

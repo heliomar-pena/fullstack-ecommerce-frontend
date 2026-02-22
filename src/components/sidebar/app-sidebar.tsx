@@ -73,10 +73,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         <SidebarFooter className="px-2 py-2">
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton
-                onClick={logout}
-                className="text-destructive"
-              >
+              <SidebarMenuButton onClick={logout} className="text-destructive">
                 <LogOut className="mr-2 size-4" />
                 <span>Logout</span>
               </SidebarMenuButton>

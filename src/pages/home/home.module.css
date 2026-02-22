@@ -1,10 +1,10 @@
 .Home {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
 }
 
 .Home__title {
-    font-size: 2rem;
+  font-size: 2rem;
 }

@@ -42,7 +42,8 @@ export const Home = () => {
             catalog.
           </p>
           <p>
-            Try using the sidebar to navigate through the different pages of the platform.
+            Try using the sidebar to navigate through the different pages of the
+            platform.
           </p>
           <p>
             We are working to improve. In the future, you'll be able to create
@@ -53,9 +54,7 @@ export const Home = () => {
 
       {isAdmin && (
         <>
-          <p>
-            As admin, you can also modify user's permissions
-          </p>
+          <p>As admin, you can also modify user's permissions</p>
         </>
       )}
     </div>
