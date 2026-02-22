@@ -9,10 +9,11 @@ import { AdminRouter } from "./decorators/admin-router";
 import { MerchantRouter } from "./decorators/merchant-router";
 import { homeRoute } from "@/pages/home/route";
 import { merchantRoute } from "@/pages/merchant/route";
+import { adminRoute } from "@/pages/admin/route";
 
 const anonymousRoutes: RouteObject[] = [loginRoute, signupRoute];
 const authenticatedRoutes: RouteObject[] = [homeRoute];
-const adminRoutes: RouteObject[] = [];
+const adminRoutes: RouteObject[] = [adminRoute];
 const merchantRoutes: RouteObject[] = [merchantRoute];
 
 const anonymousRouter: RouteObject = {

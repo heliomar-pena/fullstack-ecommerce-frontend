@@ -30,7 +30,5 @@ export type CategoryApi = {
 export async function getCategories(): Promise<CategoryApi[]> {
   const { data } = await http.get<CategoryApi[]>("/category");
 
-  toast.success("Categories loaded successfully");
-
   return data;
 }

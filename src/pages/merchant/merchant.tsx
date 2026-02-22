@@ -49,7 +49,7 @@ export default function MerchantPage() {
     <div className="p-6">
       <div className="mb-4 flex items-center justify-between gap-3">
         <div>
-          <h1 className="text-xl font-semibold">Merchant</h1>
+          <h1 className="text-xl font-semibold">Products</h1>
           <p className="text-sm text-muted-foreground">Product List.</p>
         </div>
 

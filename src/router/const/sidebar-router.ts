@@ -24,17 +24,29 @@ export const SIDEBAR_NAV: readonly NavGroup[] = [
     items: [{ key: "home", title: "Home", to: "/", icon: Home, end: true }],
   },
   {
-    key: "admin",
-    title: "Admin",
-    allowedRoles: [ROLES.Admin],
-    items: [{ key: "admin", title: "Admin Panel", to: "/admin", icon: Shield }],
-  },
-  {
     key: "merchant",
     title: "Merchant",
     allowedRoles: [ROLES.Merchant],
     items: [
-      { key: "merchant", title: "Merchant", to: "/merchant", icon: Store },
+      {
+        key: "merchant",
+        title: "Products",
+        to: "/merchant/products",
+        icon: Store,
+      },
+    ],
+  },
+  {
+    key: "admin",
+    title: "Admin",
+    allowedRoles: [ROLES.Admin],
+    items: [
+      {
+        key: "admin",
+        title: "Users Management",
+        to: "/admin/users",
+        icon: Shield,
+      },
     ],
   },
 ];

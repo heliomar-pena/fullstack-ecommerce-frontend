@@ -12,14 +12,13 @@ export const Home = () => {
 
   const isAdmin = hasAnyRole(user?.roles, [ROLES.Admin]);
   const isMerchant = hasAnyRole(user?.roles, [ROLES.Merchant]);
-  const isCustomer = hasAnyRole(user?.roles, [ROLES.Customer]);
 
   return (
     <div className={clsx("Home")}>
       <h1 className={clsx("Home__title")}>Welcome</h1>
       <p>Greetings {user?.email}!.</p>
 
-      {isCustomer && !isAdmin && !isMerchant && (
+      {!isAdmin && !isMerchant && (
         <>
           <p>
             Thanks for joining to the waitlist. Customer's platform are yet

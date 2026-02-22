@@ -4,7 +4,7 @@ import type { RouteObject } from "react-router";
 const LazyMerchant = lazy(() => import("./merchant"));
 
 const merchantRoute: RouteObject = {
-  path: "/merchant",
+  path: "/merchant/products",
   Component: LazyMerchant,
 };
 
