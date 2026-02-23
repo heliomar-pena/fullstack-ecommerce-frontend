@@ -1,12 +1,11 @@
 import axios, { AxiosHeaders } from "axios";
 import { getToken, clearAuth } from "../stores/authStore";
 import { toast } from "sonner";
-
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
+import { API_BASE_URL } from "@/config/api";
 
 export const http = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 15_000,
+  timeout: 15000,
 });
 
 http.interceptors.request.use((config) => {
