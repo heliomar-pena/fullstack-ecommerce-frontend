@@ -99,7 +99,11 @@ const LogIn = () => {
               <Link to="/auth/signup">Create Account</Link>
             </div>
             <Field orientation="horizontal">
-              <Button form="login-form" type="submit">
+              <Button
+                disabled={logIn.isPending}
+                form="login-form"
+                type="submit"
+              >
                 Log In
               </Button>
             </Field>
