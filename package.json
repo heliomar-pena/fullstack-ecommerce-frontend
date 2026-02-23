@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "serve": "node server.js",
     "lint": "eslint .",
+    "prettier": "prettier --check .",
     "preview": "vite preview",
     "prepare": "husky"
   },

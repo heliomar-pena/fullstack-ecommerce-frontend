@@ -1,0 +1,37 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@7.2.1
+
+jobs:
+  build_and_lint:
+    docker:
+      - image: cimg/node:24.13.0
+
+    steps:
+      - checkout
+
+      - node/install-packages:
+          pkg-manager: npm
+
+      - run:
+          name: Run ESLint
+          command: npm run lint
+
+      - run:
+          name: Run Prettier (check)
+          command: npm run prettier
+
+      - run:
+          name: Build app
+          command: npm run build
+
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+
+workflows:
+  build_lint_deploy:
+    jobs:
+      - build_and_lint

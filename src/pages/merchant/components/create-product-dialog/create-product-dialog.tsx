@@ -73,6 +73,7 @@ export function CreateProductDialog({
     mode: "onSubmit",
   });
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const selectedCategoryId = form.watch("categoryId");
   const selectedCategory = React.useMemo(
     () => findSelectedCategory(categories, selectedCategoryId),
