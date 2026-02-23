@@ -34,7 +34,7 @@ export const Home = () => {
         </>
       )}
 
-      {isMerchant && isAdmin && (
+      {(isMerchant || isAdmin) && (
         <>
           <p>
             Here, you'll be able to create categories and products for your
