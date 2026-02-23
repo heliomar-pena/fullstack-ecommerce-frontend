@@ -20,6 +20,9 @@ This project is the FrontEnd of a E-Commerce app built with React, and Shadcn as
     - [Authentication](#authentication)
     - [Authorization (Roles)](#authorization-roles)
     - [Form Validation](#form-validation)
+    - [Categories](#categories)
+    - [Products](#products)
+    - [User's Management](#users-management)
     - [API Integration](#api-integration)
     - [Navigation \& Routing](#navigation--routing)
     - [Real-Time Features (SSE)](#real-time-features-sse)
@@ -52,6 +55,22 @@ This project is the FrontEnd of a E-Commerce app built with React, and Shadcn as
 - Type-specific attribute validation
 - Real-time validation feedback
 - Schema-based validation with Zod
+
+### Categories
+
+- Merchants can create a category with custom attributes.
+- When user defines attributes can select the unit, type, and name.
+
+### Products
+
+- Merchants can a product with Title + Code + Description and assign a category to it (It will inherit the category attributes).
+- Runtime validation of the attributes' types in the product's details form, to guide the user and avoid human errors when filling attributes.
+- Merchants can publicate a product on the ecommerce.
+- Merchants can delete a product. Soft delete is supported for products and attributes.
+
+### User's Management
+
+- Admins have a section to see all the users in the system and assign roles to the users.
 
 ### API Integration
 
