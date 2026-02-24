@@ -8,3 +8,8 @@
 .Home__title {
   font-size: 2rem;
 }
+
+.Home__skeleton {
+  width: 100%;
+  height: 4rem;
+}

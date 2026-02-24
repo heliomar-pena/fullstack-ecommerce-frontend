@@ -4,14 +4,17 @@ import { Button } from "@/components/ui/button";
 import { useUser } from "@/context/user/user.context";
 import styles from "./home.module.css";
 import { mclsx } from "@/utils/clsx";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const clsx = mclsx(styles);
 
 export const Home = () => {
-  const { user, logout } = useUser();
+  const { user, isLoading, logout } = useUser();
 
   const isAdmin = hasAnyRole(user?.roles, [ROLES.Admin]);
   const isMerchant = hasAnyRole(user?.roles, [ROLES.Merchant]);
+
+  if (isLoading) return <Skeleton className={clsx("Home__skeleton")} />;
 
   return (
     <div className={clsx("Home")}>
